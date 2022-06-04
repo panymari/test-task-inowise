@@ -19,7 +19,7 @@ namespace src;
 
 class Task9
 {
-    public function getSumOfThreeNumbers(array $arr, int $number): array
+    public function main(array $arr, int $number): array
     {
         $result = [];
         for ($i = 0; $i < count($arr) - 2; $i++) {
