@@ -36,4 +36,3 @@ class Task5
         return $this->fib($index);
     }
 }
-
