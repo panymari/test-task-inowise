@@ -37,5 +37,3 @@ class Task5
     }
 }
 
-$t = new Task5();
-echo $t->main(10);
