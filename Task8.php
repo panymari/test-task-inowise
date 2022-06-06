@@ -9,3 +9,4 @@ class Task8
         return json_decode($json, true);
     }
 }
+
