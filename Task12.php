@@ -32,24 +32,28 @@ class Task12
     public function add(): Task12
     {
         $this->result = $this->getValue1() + $this->getValue2();
+
         return $this;
     }
 
     public function subtract(): Task12
     {
         $this->result = $this->getValue1() - $this->getValue2();
+
         return $this;
     }
 
     public function multiply(): Task12
     {
         $this->result = $this->getValue1() * $this->getValue2();
+
         return $this;
     }
 
     public function divide(): Task12
     {
         $this->result = $this->getValue1() / $this->getValue2();
+
         return $this;
     }
 
