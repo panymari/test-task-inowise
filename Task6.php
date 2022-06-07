@@ -16,7 +16,7 @@ class Task6
             9 => 30,
             10 => 31,
             11 => 30,
-            12 => 31];
+            12 => 31, ];
         if ($month === 2) {
             if ($year % 4 === 0) {
                 if ($year % 100 === 0 && $year % 400 === 0) {
@@ -28,6 +28,7 @@ class Task6
                 return 28;
             }
         }
+
         return $monthsMap[$month];
     }
 
@@ -50,6 +51,7 @@ class Task6
         $leapYears = ($years - 1) / 4;
         $days = $years * 365 + $leapYears;
         $dayOfWeek = $days % 7;
+
         return $dayOfWeek + 1;
     }
 
@@ -69,6 +71,7 @@ class Task6
                 $startDayOfTheWeek = ($startDayOfTheWeek + $offset) % 7;
             }
         }
+
         return $firstsOnMondays;
     }
 }
