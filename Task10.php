@@ -8,7 +8,7 @@ class Task10
     {
         $resultArr[] = $input;
         if ($input < 1) {
-            throw new \InvalidArgumentException("Input must be only positive value!");
+            throw new \InvalidArgumentException('Input must be only positive value!');
         }
         while ($input > 1) {
             if ($input % 2 === 0) {
@@ -18,6 +18,7 @@ class Task10
             }
             array_push($resultArr, $input);
         }
+
         return $resultArr;
     }
 }
