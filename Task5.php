@@ -33,6 +33,7 @@ class Task5
                 throw new \InvalidArgumentException("This result isn't reliable");
             }
         }
+
         return $this->fib($index);
     }
 }
