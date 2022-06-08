@@ -4,36 +4,27 @@ namespace src;
 
 class Task5
 {
-    public function fib(int $index): int
+    public function main(int $n)
     {
-        if ($index <= 1) {
-            return $index;
+        if ($n <= 0) {
+            throw new \InvalidArgumentException('Invalid input!');
+        }
+        if ($n === 1) {
+            return 0;
+        }
+        $n1 = 0;
+        $n2 = 1;
+        $n3 = 0;
+
+        while (strlen(strval($n3)) !== $n) {
+            $n3 = $n1 + $n2;
+            $n1 = $n2;
+            $n2 = $n3;
         }
 
-        return $this->fib($index - 1) + $this->fib($index - 2);
-    }
-
-    public function main(int $n): int
-    {
-        $index = 1;
-        $firstNumber = 0;
-        $secondNumber = 1;
-
-        while (true) {
-            $fibNum = $firstNumber + $secondNumber;
-            $index += 1;
-            $firstNumber = $secondNumber;
-            $secondNumber = $fibNum;
-
-            if (intval($fibNum / (10 ** ($n - 1))) > 0) {
-                break;
-            }
-
-            if ($secondNumber === $firstNumber && $secondNumber > 1) {
-                throw new \InvalidArgumentException("This result isn't reliable");
-            }
-        }
-
-        return $this->fib($index);
+        return $n3;
     }
 }
+
+$task5 = new Task5();
+echo $task5->main(15);
