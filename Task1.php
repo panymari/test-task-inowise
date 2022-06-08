@@ -11,7 +11,7 @@ class Task1
             : ($inputNumber > 20
                 ? 'More than 20'
                 : ($inputNumber > 10
-                    ? 'More than 30'
+                    ? 'More than 10'
                     : 'Less than 10'));
     }
 }
