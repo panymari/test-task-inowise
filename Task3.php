@@ -4,8 +4,12 @@ namespace src;
 
 class Task3
 {
-    public function main(int $value): int
+    public function main($value): int
     {
+        if (1 >= $value || !is_integer($value)) {
+            throw new \InvalidArgumentException('Invalid input!');
+        }
+
         $digitsArr = str_split($value);
 
         if (count($digitsArr) > 1) {
@@ -14,11 +18,10 @@ class Task3
 
                 return $carry;
             });
-            echo $this->main($sumOfDigits);
+
+            return $this->main($sumOfDigits);
         } else {
             return intval($digitsArr);
         }
-
-        return 0;
     }
 }
