@@ -4,8 +4,17 @@ namespace src;
 
 class Task2
 {
-    public function main(string $date): string
+    public function main(string $date): int
     {
+        if (!preg_match('/^(0[1-9]|[12][0-9]|3[01])(\/|-|\.)(0[1-9]|1[012])(\/|-|\.)(19|20)\d\d$/', $date)) {
+            throw new \InvalidArgumentException('Invalid input date!');
+        }
+        $dateToday = date('d.m.Y');
+
+        if ($date == $dateToday) {
+            return 0;
+        }
+
         $dayMonth = substr($date, 0, 5);
         $nextYearDate = $dayMonth . '.' . date('Y') + 1;
 
@@ -16,11 +25,9 @@ class Task2
         if ($targetDate > $currentDate) {
             $difference = $currentDate - $targetDate;
         } else {
-            $difference = $currentDateNextYear - $targetDate;
+            $difference = $currentDateNextYear - $currentDate;
         }
 
-        $daysLeft = round($difference / (60 * 60 * 24));
-
-        return abs($daysLeft);
+        return abs(round($difference / (60 * 60 * 24)));
     }
 }
