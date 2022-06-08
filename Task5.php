@@ -25,6 +25,3 @@ class Task5
         return $n3;
     }
 }
-
-$task5 = new Task5();
-echo $task5->main(15);
