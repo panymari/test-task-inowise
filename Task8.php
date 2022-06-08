@@ -4,8 +4,12 @@ namespace src;
 
 class Task8
 {
-    public function main(string $json): array
+    public function main($json): object
     {
-        return json_decode($json, true);
+        if (!is_string($json)) {
+            throw new \InvalidArgumentException("Invalid input!");
+        }
+        return json_decode($json);
     }
 }
+
