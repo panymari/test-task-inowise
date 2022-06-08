@@ -57,6 +57,9 @@ class Task6
 
     public function main(int $year, int $lastYear, int $month, int $lastMonth, string $day = 'Monday'): int
     {
+        if ($year < 0 || $lastYear < 0) {
+            throw new \InvalidArgumentException('Invalid input!');
+        }
         $startDayOfTheWeek = $this->getStartDayOfTheWeek($year);
         $firstsOnMondays = 0;
         $findDay = $this->getDayOfTheWeek($day);
