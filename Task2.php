@@ -9,9 +9,8 @@ class Task2
         if (!preg_match('/^(0[1-9]|[12][0-9]|3[01])(\/|-|\.)(0[1-9]|1[012])(\/|-|\.)(19|20)\d\d$/', $date)) {
             throw new \InvalidArgumentException('Invalid input date!');
         }
-        $dateToday = date('d.m.Y');
 
-        if ($date == $dateToday) {
+        if ($date == date('d.m.Y') || $date == date('d-m-Y')) {
             return 0;
         }
 
