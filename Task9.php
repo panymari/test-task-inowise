@@ -11,7 +11,7 @@ class Task9
         }
         $j = 0;
         $result = [];
-        for ($i = 0;$i <= count($arr);$i++) {
+        for ($i = 0;$i < count($arr) - 2; $i++) {
             if ($arr[$i] + $arr[$i + 1] + $arr[$i + 2] === $number) {
                 $result = ["[$j]" => "{$arr[$i]} + {$arr[$i + 1]} + {$arr[$i + 2]} = 0"];
                 $j++;
