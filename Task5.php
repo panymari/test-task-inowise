@@ -22,6 +22,6 @@ class Task5
             $n2 = $n3;
         }
 
-        return strval($n3);
+        return sprintf('%s', $n3);
     }
 }
