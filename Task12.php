@@ -72,4 +72,12 @@ class Task12
     {
         return $this->result * $input;
     }
+    public function subtractBy(float $input): float
+    {
+        return $this->result - $input;
+    }
+    public function addBy(float $input): float
+    {
+        return $this->result + $input;
+    }
 }
