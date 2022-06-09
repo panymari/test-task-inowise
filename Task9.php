@@ -6,17 +6,18 @@ class Task9
 {
     public function main(array $arr, int $number): array
     {
-        if ($number<=0 || count($arr) === 2) {
-            throw new \InvalidArgumentException("Invalid input!");
+        if ($number <= 0 || count($arr) === 2) {
+            throw new \InvalidArgumentException('Invalid input!');
         }
-        $j=0;
+        $j = 0;
         $result = [];
-        for ($i=0;$i<=count($arr);$i++) {
-            if ($arr[$i]+$arr[$i+1]+$arr[$i+2] === $number) {
-                $result = array("[$j]"=>"{$arr[$i]} + {$arr[$i+1]} + {$arr[$i+2]} = 0");
+        for ($i = 0;$i <= count($arr);$i++) {
+            if ($arr[$i] + $arr[$i + 1] + $arr[$i + 2] === $number) {
+                $result = ["[$j]" => "{$arr[$i]} + {$arr[$i + 1]} + {$arr[$i + 2]} = 0"];
                 $j++;
             }
         }
+
         return $result;
     }
 }
