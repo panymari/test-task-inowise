@@ -9,7 +9,7 @@ class Task7
         if (count($arr) <= $position) {
             throw new \InvalidArgumentException('There is no such position here!');
         }
-        if ($position <= 0) {
+        if ($position < 0) {
             throw new \InvalidArgumentException('Invalid position!');
         }
         if (empty($arr)) {
