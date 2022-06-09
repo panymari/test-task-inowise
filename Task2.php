@@ -30,4 +30,3 @@ class Task2
         return abs(round($difference / (60 * 60 * 24)));
     }
 }
-
