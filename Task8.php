@@ -4,13 +4,20 @@ namespace src;
 
 class Task8
 {
-    public function main($json): array
+    public function main($json): string
     {
         if (!is_string($json) || ctype_digit($json)) {
             throw new \InvalidArgumentException('Invalid input!');
         }
-        $j = json_decode($json, true);
-
-        return array_merge($j);
+        $obj = json_decode($json, true);
+        foreach ($obj as $item => $value) {
+            if (is_array($value)) {
+                foreach ($value as $value1) {
+                    return "{$item}: {$value1} <br>";
+                }
+            } else {
+                return "{$item}: {$value} <br>";
+            }
+        }
     }
 }
