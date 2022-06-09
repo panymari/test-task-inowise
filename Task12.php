@@ -52,6 +52,9 @@ class Task12
 
     public function divide(): Task12
     {
+        if ($this->getValue2() == 0) {
+            throw new \InvalidArgumentException("Division by zero");
+        }
         $this->result = $this->getValue1() / $this->getValue2();
 
         return $this;
@@ -59,6 +62,13 @@ class Task12
 
     public function divideBy(float $input): float
     {
+        if ($input == 0) {
+            throw new \InvalidArgumentException("Division by zero");
+        }
         return $this->result / $input;
+    }
+    public function multiplyBy(float $input): float
+    {
+        return $this->result * $input;
     }
 }
