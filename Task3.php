@@ -10,18 +10,20 @@ class Task3
             throw new \InvalidArgumentException('Invalid input!');
         }
 
-        $digitsArr = str_split($value);
+        $digitValue = 0;
 
-        if (count($digitsArr) > 1) {
-            $sumOfDigits = array_reduce($digitsArr, function ($carry, $item) {
-                $carry += $item;
-
-                return $carry;
-            });
-
-            return $this->main($sumOfDigits);
-        } else {
-            return intval($digitsArr);
+        while ($value > 0 || $digitValue > 9) {
+            if ($value === 0) {
+                $value = $digitValue;
+                $digitValue = 0;
+            }
+            $digitValue += $value % 10;
+            $value = (int)$value / 10;
         }
+
+        return $digitValue;
     }
 }
+
+$task3 = new Task3();
+echo $task3->main(56);
