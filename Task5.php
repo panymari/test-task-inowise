@@ -30,7 +30,7 @@ class Task5
             $arr[] = $sum.$result;
         }
 
-        return intval(implode($arr)) ;
+        return implode($arr);
     }
     public function main(int $n): string
     {
