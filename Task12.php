@@ -4,9 +4,9 @@ namespace src;
 
 class Task12
 {
-    private float $value1;
-    private float $value2;
-    protected float $result = 0;
+    private int $value1;
+    private int $value2;
+    protected int $result = 0;
 
     public function __construct($value1, $value2)
     {
@@ -14,17 +14,17 @@ class Task12
         $this->value2 = $value2;
     }
 
-    public function getValue1(): float
+    public function getValue1(): int
     {
         return $this->value1;
     }
 
-    public function getValue2(): float
+    public function getValue2(): int
     {
         return $this->value2;
     }
 
-    public function getResult(): float
+    public function getResult(): int
     {
         return $this->result;
     }
@@ -60,7 +60,7 @@ class Task12
         return $this;
     }
 
-    public function divideBy(float $input): float
+    public function divideBy(int $input = 1): int
     {
         if ($input == 0) {
             throw new \InvalidArgumentException('Division by zero');
@@ -68,15 +68,15 @@ class Task12
 
         return $this->result / $input;
     }
-    public function multiplyBy(float $input): float
+    public function multiplyBy(int $input = 0): int
     {
         return $this->result * $input;
     }
-    public function subtractBy(float $input): float
+    public function subtractBy(int $input = 0): int
     {
         return $this->result - $input;
     }
-    public function addBy(float $input): float
+    public function addBy(int $input = 0): int
     {
         return $this->result + $input;
     }
