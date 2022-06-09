@@ -4,7 +4,7 @@ namespace src;
 
 class Task5
 {
-    public function main(int $n): int
+    public function main(int $n): string
     {
         if ($n <= 0) {
             throw new \InvalidArgumentException('Invalid input!');
@@ -22,6 +22,6 @@ class Task5
             $n2 = $n3;
         }
 
-        return $n3;
+        return strval($n3);
     }
 }
