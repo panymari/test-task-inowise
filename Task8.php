@@ -10,14 +10,18 @@ class Task8
             throw new \InvalidArgumentException('Invalid input!');
         }
         $obj = json_decode($json, true);
+
+        $arr = [];
         foreach ($obj as $item => $value) {
             if (is_array($value)) {
-                foreach ($value as $value1) {
-                    return "{$item}: {$value1}";
-                }
+                $arrKey = implode(array_keys($value));
+                $arrValue = implode(array_values($value));
+                array_push($arr, "{$arrKey}: {$arrValue} ");
             } else {
-                return "{$item}: {$value}";
+                array_push($arr, "{$item}: {$value} ");
             }
         }
+
+        return implode($arr);
     }
 }
