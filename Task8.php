@@ -16,12 +16,21 @@ class Task8
             if (is_array($value)) {
                 $arrKey = implode(array_keys($value));
                 $arrValue = implode(array_values($value));
-                array_push($arr, "{$arrKey}: {$arrValue} ");
+                array_push($arr, "{$arrKey}: {$arrValue} \n");
             } else {
-                array_push($arr, "{$item}: {$value} ");
+                array_push($arr, "{$item}: {$value} \n");
             }
         }
 
         return implode($arr);
     }
 }
+
+$t  = new Task8();
+echo $t->main('{
+"Title": "The Cuckoos Calling",
+"Author": "Robert Galbraith",
+"Detail": {
+"Publisher": "Little Brown"
+}
+}');
