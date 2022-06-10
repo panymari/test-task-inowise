@@ -66,26 +66,45 @@ class Task12
             throw new \InvalidArgumentException('Division by zero');
         }
 
-        $this->result /= $input;
+        if ($this->result === 0) {
+            return $input;
+        } else {
+            $this->result /= $input;
 
-        return $this->result;
+            return $this->result;
+        }
     }
     public function multiplyBy(int $input): int
     {
-        $this->result *= $input;
+        if ($this->result === 0) {
+            return $input;
+        } else {
+            $this->result *= $input;
 
-        return $this->result;
+            return $this->result;
+        }
     }
     public function subtractBy(int $input): int
     {
-        $this->result -= $input;
+        if ($this->result === 0) {
+            return $input;
+        } else {
+            $this->result -= $input;
 
-        return $this->result;
+            return $this->result;
+        }
     }
     public function addBy(int $input): int
     {
-        $this->result += $input;
+        if ($this->result === 0) {
+            return $input;
+        } else {
+            $this->result += $input;
 
-        return $this->result;
+            return $this->result;
+        }
     }
 }
+
+$t = new Task12(12, 15);
+echo $t->add()->divideBy(2);
