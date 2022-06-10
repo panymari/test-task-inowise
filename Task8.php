@@ -25,12 +25,3 @@ class Task8
         return implode($arr);
     }
 }
-
-$t = new Task8();
-echo $t->main('{
-"Title": "The Cuckoos Calling",
-"Author": "Robert Galbraith",
-"Detail": {
-"Publisher": "Little Brown"
-}
-}');
