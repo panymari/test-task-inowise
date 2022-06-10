@@ -13,10 +13,10 @@ class Task8
         foreach ($obj as $item => $value) {
             if (is_array($value)) {
                 foreach ($value as $value1) {
-                    return "{$item}: {$value1} <br>";
+                    return "{$item}: {$value1}";
                 }
             } else {
-                return "{$item}: {$value} <br>";
+                return "{$item}: {$value}";
             }
         }
     }
