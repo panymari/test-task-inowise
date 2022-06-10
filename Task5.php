@@ -4,7 +4,7 @@ namespace src;
 
 class Task5
 {
-    public function sum(string $a, string $b): int
+    public function sum(string $a, string $b): string
     {
         $maxLength = max(strlen($a), strlen($b));
 
