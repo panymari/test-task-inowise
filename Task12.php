@@ -6,7 +6,7 @@ class Task12
 {
     private int $value1;
     private int $value2;
-    protected int $result = 0;
+    public int $result = 0;
 
     public function __construct($value1, $value2)
     {
@@ -105,6 +105,3 @@ class Task12
         }
     }
 }
-
-$t = new Task12(12, 15);
-echo $t->add()->divideBy(2);
