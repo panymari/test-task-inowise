@@ -6,7 +6,7 @@ class Task12
 {
     private int $value1;
     private int $value2;
-    public int $result = 0;
+    protected string $result;
 
     public function __construct($value1, $value2)
     {
@@ -22,6 +22,11 @@ class Task12
     public function getValue2(): int
     {
         return $this->value2;
+    }
+
+    public function __toString()
+    {
+        return $this->result;
     }
 
     public function getResult(): int
@@ -66,7 +71,7 @@ class Task12
             throw new \InvalidArgumentException('Division by zero');
         }
 
-        if ($this->result === 0) {
+        if ($this->result == 0) {
             return $input;
         } else {
             $this->result /= $input;
@@ -76,7 +81,7 @@ class Task12
     }
     public function multiplyBy(int $input): int
     {
-        if ($this->result === 0) {
+        if ($this->result == 0) {
             return $input;
         } else {
             $this->result *= $input;
@@ -86,7 +91,7 @@ class Task12
     }
     public function subtractBy(int $input): int
     {
-        if ($this->result === 0) {
+        if ($this->result == 0) {
             return $input;
         } else {
             $this->result -= $input;
@@ -96,7 +101,7 @@ class Task12
     }
     public function addBy(int $input): int
     {
-        if ($this->result === 0) {
+        if ($this->result == 0) {
             return $input;
         } else {
             $this->result += $input;
