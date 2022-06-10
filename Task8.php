@@ -26,7 +26,7 @@ class Task8
     }
 }
 
-$t  = new Task8();
+$t = new Task8();
 echo $t->main('{
 "Title": "The Cuckoos Calling",
 "Author": "Robert Galbraith",
