@@ -16,9 +16,9 @@ class Task8
             if (is_array($value)) {
                 $arrKey = implode(array_keys($value));
                 $arrValue = implode(array_values($value));
-                array_push($arr, "{$arrKey}: {$arrValue} \n");
+                array_push($arr, "{$arrKey}: {$arrValue} \r\n");
             } else {
-                array_push($arr, "{$item}: {$value} \n");
+                array_push($arr, "{$item}: {$value} \r\n");
             }
         }
 
