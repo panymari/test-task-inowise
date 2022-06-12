@@ -15,23 +15,23 @@ class Task5
 
         $buf = 0;
 
-        $arr = [];
-
         for ($i = $maxLength - 1; $i >= 0; $i--) {
-            $sum = (int)$a[$i] + (int)$b[$i] + $buf;
-
-            $buf = 0;
-
-            if ($sum > 9) {
-                $buf = 1;
-                $sum = $sum % 10;
+            $sum = substr($a, $i, 1) + substr($b, $i, 1) + $buf;
+            if (strlen($sum) > 1) {
+                $result = substr($sum, 1, 1) . $result;
+                $buf = substr($sum, 0, 1);
+            } else {
+                $result = $sum . $result;
+                $buf = 0;
             }
-
-            $arr[] = $sum.$result;
+        }
+        if ($buf == 1) {
+            $result = '1' . $result;
         }
 
-        return implode($arr);
+        return $result;
     }
+
     public function main(int $n): string
     {
         if ($n <= 0) {
@@ -45,11 +45,7 @@ class Task5
         $n3 = 0;
 
         while (strlen(strval($n3)) !== $n) {
-            if ($n1 > 2880067194370816120 && $n2 > 4660046610375530309) {
-                $n3 = $this->sum($n1, $n2);
-            } else {
-                $n3 = $n1 + $n2;
-            }
+            $n3 = $this->sum($n1, $n2);
             $n1 = $n2;
             $n2 = $n3;
         }
