@@ -9,6 +9,7 @@ class Task8
         if (!is_string($json) || ctype_digit($json)) {
             throw new \InvalidArgumentException('Invalid input!');
         }
+
         $obj = json_decode($json, true);
 
         $arr = [];
@@ -16,9 +17,9 @@ class Task8
             if (is_array($value)) {
                 $arrKey = implode(array_keys($value));
                 $arrValue = implode(array_values($value));
-                array_push($arr, "{$arrKey}: {$arrValue} \r\n");
+                array_push($arr, "{$arrKey}: {$arrValue}");
             } else {
-                array_push($arr, "{$item}: {$value} \r\n");
+                array_push($arr, "{$item}: {$value}\r\n");
             }
         }
 
